@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+    position: fixed; 
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 20px;   
+    z-index: 1000;   
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: background-color 0.3s;  /* Smooth hover effect */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgba(221, 221, 221, 0.3);  /* Semi-transparent on hover */
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgba(166, 170, 169, 0.5);  /* Semi-transparent active state */
+  color: white;
+}
+
+
+
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+    }
+        
+    100% {
+        opacity: 1;
+    
+    }
+}
+
+@keyframes magnifyWave {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    25%, 75% {
+        transform: scale(1.25);
+    }
+    33%, 66% {
+        transform: scale(1.4);
+    }
+}
+
+.intro {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  margin: 00px;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideInFade 3s ease-out;  /* Opacity change animation */
+  position: relative;
+  font-size: 60px;
+  z-index: 2;
+}
+
+.intro .word {
+    display: inline-block;
+    margin-right: 0.1em;  /* Adjust this value to control word spacing */
+}
+
+.intro span {
+    display: inline-block;
+    margin-right: -0.05em;  /* Adjust letter spacing within words */
+    animation: magnifyWave .75s ease-in-out;  /* Magnifying wave animation */
+    animation-fill-mode: backwards;
+}
+
+/* Apply different delays to each letter */
+.intro span:nth-child(1) { animation-delay: 0s; }     /* W */
+.intro span:nth-child(2) { animation-delay: 0.05s; }  /* h */
+.intro span:nth-child(3) { animation-delay: 0.1s; }   /* o */
+.intro span:nth-child(4) { animation-delay: 0.15s; }  /* space */
+.intro span:nth-child(5) { animation-delay: 0.2s; }   /* i */
+.intro span:nth-child(6) { animation-delay: 0.25s; }  /* s */
+.intro span:nth-child(7) { animation-delay: 0.3s; }   /* space */
+.intro span:nth-child(8) { animation-delay: 0.35s; }  /* B */
+.intro span:nth-child(9) { animation-delay: 0.4s; }   /* e */
+.intro span:nth-child(10) { animation-delay: 0.45s; } /* n */
+.intro span:nth-child(11) { animation-delay: 0.5s; }  /* space */
+.intro span:nth-child(12) { animation-delay: 0.55s; } /* K */
+.intro span:nth-child(13) { animation-delay: 0.6s; }  /* o */
+.intro span:nth-child(14) { animation-delay: 0.65s; } /* v */
+.intro span:nth-child(15) { animation-delay: 0.7s; }  /* a */
+.intro span:nth-child(16) { animation-delay: 0.75s; } /* k */
+.intro span:nth-child(17) { animation-delay: 0.8s; }  /* a */
+.intro span:nth-child(18) { animation-delay: 0.85s; } /* s */
+.intro span:nth-child(19) { animation-delay: 0.9s; }  /* ? */
+
+.opener {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #09171ba9;
+}
+.gallery-item:hover .overlay {
+    opacity: .43;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.01);
+}
+
+.gallery-grid {
+    display: columns;
+    gap: 50px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.bio {
+    position: absolute;
+    left: 4%;
+    top: 150px;
+    background-color: rgba(45, 45, 45, 0.164);  /* Dark gray with 75% opacity */
+    border-radius: 15px;                       /* Rounded corners */
+    padding: 30px;                             /* Increased padding for better text spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow for depth */
+}
+
+.bio h1,
+.bio p {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    font-family: 'Fira Sans', sans-serif;  /* Add this line */
+    margin-bottom: 20px;  /* Add space between heading and paragraph */
+}
+
+.bio h1 {
+    
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.bio p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 650px;
+    font-weight: 400;
+}
+
+#fuji1707 {
+    position: absolute;
+    bottom: 35%;
+    right: 45%;
+    width: 100%;
+    height: auto;
+
+}
